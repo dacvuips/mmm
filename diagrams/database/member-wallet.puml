@@ -1,0 +1,40 @@
+@startuml
+
+map WalletLog {
+  memberId => Chủ shop
+  type => Loại giao dịch
+  subType => Loại giao dịch con
+  value => Số tiền
+  meta => Thông tin thêm
+}
+
+enum WalletLogType {
+  deposit_manual => Nạp tiền thủ công
+  deposit_momo => Nạp tiền momo
+  withdraw_manual => Rút tiền
+  withdraw_momo => Rút tiền momo
+  adjust_incr => Điều chỉnh tăng
+  adjust_decr => Điều chỉnh giảm
+}
+
+map WithdrawRequest {
+  memberId => Chủ shop
+  value => Số tiền
+  status => Trạng thái
+  approvedAt => Thời gian duyệt
+  rejectedAt => Thời gian từ chối
+  rejectedReason => Lý do từ chối
+  userId => Người duyệt
+}
+
+enum WithdrawRequestStatus {
+  pending => Chờ xử lý
+  approved => Đã duyệt
+  rejected => Từ chối
+}
+
+WalletLog -- WalletLogType
+WalletLog -- WithdrawRequest
+
+
+@enduml

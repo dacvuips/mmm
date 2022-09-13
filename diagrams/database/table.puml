@@ -1,0 +1,29 @@
+@startuml
+
+left to right direction
+
+package Table {
+  map ShopTable {
+    memberId => Mã cửa hàng
+    branchId => Mã chi nhánh
+    code => Mã bàn
+    name => Tên bàn
+  }
+
+  map Order {
+    tableCode => Mã bàn
+  }
+
+  Order --* ShopTable
+
+  map Branch {
+    memberId => Mã cửa hàng
+    code => Mã chi nhánh
+    name => Tên chi nhánh
+  }
+
+  Branch --{ ShopTable
+  Order --* Branch
+}
+
+@enduml

@@ -1,0 +1,78 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  @apply bg-gray-100;
+  @apply text-gray-700;
+  @apply text-base;
+  @apply box-border;
+}
+
+html {
+  overflow-y: scroll;
+  &::-webkit-scrollbar-button:vertical:start:increment,
+  &::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #ccc;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 94%;
+  @screen xs {
+    width: 94%;
+    max-width: none;
+  }
+  @screen sm {
+    width: 94%;
+    max-width: none;
+  }
+  @screen md {
+    width: 92%;
+    max-width: none;
+  }
+  @screen lg {
+    width: 90%;
+    @apply max-w-screen-lg;
+  }
+  @screen xl {
+    width: 88%;
+    @apply max-w-screen-xl;
+  }
+  @screen 2xl {
+    width: 86%;
+    @apply max-w-screen-xl;
+  }
+}
+
+.no-focus:not(.btn) {
+  outline: none;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.tippy-box.no-padding .tippy-content {
+  padding: 0 !important;
+}

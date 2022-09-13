@@ -1,0 +1,26 @@
+@import "react-toastify/dist/ReactToastify.css";
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/animations/shift-away-subtle.css";
+@import "tippy.js/themes/light.css";
+@import "react-datepicker/dist/react-datepicker.css";
+@import "swiper/swiper-bundle.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import "./base";
+}
+
+@layer components {
+  @import "./buttons";
+  @import "./form";
+}
+
+@layer utilities {
+  @import "./utilities";
+}
+
+@import "./custom";
+@import "./content";

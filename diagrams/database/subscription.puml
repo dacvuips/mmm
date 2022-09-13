@@ -1,0 +1,40 @@
+@startuml
+
+package ShopSubscription {
+  map ShopSubscription {
+    memberId => Mã chủ shop
+    expiredAt => Ngày hết hạn
+    remindExpiredAt => Ngày nhắc nhở hết hạn
+    remindLockAt => Ngày nhắc nhở khoá
+    lockedAt => Ngày khoá
+    plan => Gói dịch vụ
+    period => Chu kỳ
+    price => Đơn giá
+    fee => Phí dịch vụ
+    requestId => yêu cầu đăng ký
+    paymentTransId => Mã thanh toán
+  }
+
+  enum Plan {
+    Free => Dùng thử
+    Basic => Cơ bản
+    Premium => Nâng cao
+  }
+
+  ShopSubscription --> Plan
+}
+
+package Wallet {
+  map Wallet  {
+    owner => Chủ ví
+    balance => Số dư
+  }
+
+  map WalletTransaction {
+    walletId => Mã ví
+    amount => Số tiền
+    type => Loại giao dịch
+  }
+}
+
+@enduml

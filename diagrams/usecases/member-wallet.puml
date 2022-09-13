@@ -1,0 +1,32 @@
+@startuml
+
+actor "Chủ shop" as Member
+actor "Admin" as Admin
+
+left to right direction
+usecase "Topup" as Topup
+usecase "Topup Thủ công" as TopupManual
+usecase "Topup Momo" as TopupMomo
+usecase "Yêu cầu Rút tiền" as Withdraw
+usecase "Rút thủ công" as WithdrawManual
+usecase "Rút Momo" as WithdrawMomo
+usecase "Thanh toán hoa hồng" as DisburseCommission
+usecase "Thanh toán thủ công" as DisburseCommissionManual
+usecase "Thanh toán Momo" as DisburseCommissionMomo
+usecase "Điều chỉnh số dư" as AdjustBalance
+
+Member --> Topup
+Member --> Withdraw
+Member --> DisburseCommission
+Topup <-- TopupManual
+Topup <-- TopupMomo
+Withdraw <-- WithdrawManual
+Withdraw <-- WithdrawMomo
+DisburseCommission <-- DisburseCommissionManual
+DisburseCommission <-- DisburseCommissionMomo
+TopupManual <-- Admin: Nhập thủ công
+WithdrawManual <-- Admin: Duyệt thủ công
+AdjustBalance <-- Admin
+
+
+@enduml

@@ -1,0 +1,158 @@
+// Custom project-specific class here
+:root {
+  --color-primary-light: #eee;
+  --color-primary: #333;
+  --color-primary-dark: #222;
+  --color-accent-light: #eee;
+  --color-accent: #333;
+  --color-accent-dark: #222;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato Light.ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato Semibold.ttf");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato Black.ttf");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+.swipper-vertical {
+  @screen md {
+    max-height: 180px;
+  }
+  @screen lg {
+    max-height: 180px;
+  }
+  @screen xl {
+    max-height: 320px;
+  }
+  @screen 2xl {
+    max-height: 320px;
+  }
+}
+
+.lucky-wheel-container {
+  @apply relative w-4/5 h-0 overflow-hidden;
+  padding-top: 80%;
+  //   position: relative;
+  //     width: 80%;
+  //     height: 0;
+  //     padding-top: 80%;
+  //     overflow: hidden;
+  // position: absolute;
+  //     width: 100%;
+  //     height: 100%;
+  //     top: 0px;
+  //     left: 0px;
+}
+.lucky-wheel {
+  @apply absolute w-full h-full top-0 left-0;
+}
+.hollow-circles {
+  @apply bg-white border-4 border-solid border-white;
+  border-image: url("/assets/img/bg-btn-voucher.png") 27/21px 21px 21px 0px/0px 12px 0px 0px round;
+}
+
+.mentions {
+}
+.mentions__input {
+  position: relative;
+  z-index: 0;
+  background-color: white;
+  outline: none !important;
+  font-weight: 400;
+  color: #333;
+}
+.mentions__suggestions {
+  z-index: 20 !important;
+}
+.mentions__suggestions__list {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.mentions__suggestions__item {
+  padding: 4px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  color: #333;
+}
+.mentions__suggestions__item--focused {
+  background-color: var(--color-primary);
+  color: white;
+}
+.mentions__highlighter {
+  border: none !important;
+  pointer-events: none;
+}
+.mentions__mention {
+  position: relative;
+  z-index: 1;
+  font-weight: 400 !important;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  -webkit-animation: pulsate 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4, 1.4);
+    opacity: 0;
+  }
+}
